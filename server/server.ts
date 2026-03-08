@@ -10,7 +10,14 @@ const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:8080', 'http://localhost:3000'],
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:8080',
+    'http://localhost:3000',
+    'https://expensemanager-97c8b.web.app',
+    'https://expensemanager-97c8b.firebaseapp.com',
+    ...(process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : [])
+  ],
   credentials: true,
 }));
 app.use(express.json());
