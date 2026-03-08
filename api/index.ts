@@ -27,7 +27,7 @@ app.get('/api/health', (req: Request, res: Response) => {
 });
 
 // Rotas Belvo
-app.use('/api/belvo', belvoRoutes);
+app.use('/api/belvo', belvoRoutes as any);
 
 // Root
 app.get('/api', (req: Request, res: Response) => {
