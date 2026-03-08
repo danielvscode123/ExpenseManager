@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "env": {
+    "BELVO_SECRET_ID": "@belvo-secret-id",
+    "BELVO_SECRET_PASSWORD": "@belvo-secret-password"
+  },
+  "functions": {
+    "api/index.ts": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api"
+    }
+  ]
+}
